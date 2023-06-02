@@ -2,3 +2,6 @@ numpy
 matplotlib
 scikit-learn
 PIL
+tensorflow
+keras
+pydot
