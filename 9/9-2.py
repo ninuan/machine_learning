@@ -34,12 +34,6 @@ from scipy.stats import mode
 labels = np.zeros_like(clusters)
 print(clusters)
 for i in range(10):
-    # q: clusters中的数字是对应第几个cluster吗
-    # a: 是的
-    # q: 第1个cluster并不一定是数字0，是吗
-    # a: 是的
-    # q:该如何获取clusters中的数字对应的真实数字？
-    # a: 用众数匹配
     mask = (clusters == i)
     labels[mask] = mode(digits.target[mask])[0] # [True,False]作为mask，选择数组元素;求众数；标量赋值给数组，自动广播
 print(mask.shape)

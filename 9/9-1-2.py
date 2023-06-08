@@ -16,4 +16,3 @@ labels = kmeans.labels_
 plt.scatter(data[:, 0], data[:, 1], c=labels)
 plt.scatter(centroids[:, 0], centroids[:, 1], marker='x', s=150, c='r')
 plt.show()
-
