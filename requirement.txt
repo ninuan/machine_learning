@@ -5,3 +5,5 @@ PIL
 tensorflow
 keras
 pydot
+torch
+torchvision
