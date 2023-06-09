@@ -9,6 +9,7 @@ from keras.models import Model
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
 from keras.utils import plot_model
+import matplotlib.pyplot as plt
 BATCH_SIZE = 50
 
 
@@ -62,3 +63,21 @@ test_generator = data_generate('./dataset/test/')
 history = model.fit_generator(train_generator, steps_per_epoch=150, epochs=4, validation_data=test_generator,
                               validation_steps=50)
 model.save('./models/model.h5')
+
+plt.plot(history.history['accuracy'])
+plt.plot(history.history['val_accuracy'])
+plt.title('Model accuracy')
+plt.ylabel('Accuracy')
+plt.xlabel('Epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.savefig('./models/accuracy.png')
+plt.show()
+
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+plt.title('Model loss')
+plt.ylabel('Loss')
+plt.xlabel('Epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.savefig('./models/loss.png')
+plt.show()
